@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @accounting.date %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @accounting.company %>
+</p>
+
+<p>
+  <strong>Tax:</strong>
+  <%= @accounting.tax %>
+</p>
+
+<p>
+  <strong>Salesperson:</strong>
+  <%= @accounting.salesperson %>
+</p>
+
+<%= link_to 'Edit', edit_accounting_path(@accounting) %> |
+<%= link_to 'Back', accountings_path %>
