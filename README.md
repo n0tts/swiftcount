@@ -1,28 +1,26 @@
-== README
+SwiftCount Accounting Solution
+==============================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Powerful Software
+-----------------
 
-Things you may want to cover:
+### Welcome to the repository
 
-* Ruby version
+Fell free to access [My Portfolio](http://swiftmediasolution.com).
 
-* System dependencies
+## First version coming out this February
 
-* Configuration
+Please stay tuned for the launching
+It can happen *anytime near February*.
 
-* Database creation
+### Features includes
+* Rapid development
++ Tested
+- 24/7 Support
 
-* Database initialization
+### Reason to choose us
+1. Price
+2. Precision
+3. Performance
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+This is what the code looks like `puts 'Hello World'`
