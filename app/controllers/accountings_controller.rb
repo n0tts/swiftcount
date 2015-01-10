@@ -4,7 +4,8 @@ class AccountingsController < ApplicationController
   # GET /accountings
   # GET /accountings.json
   def index
-    @accountings = Accounting.all
+    @search = AccountingSearch.new(params[:search])
+    @accountings = @search.scope
   end
 
   # GET /accountings/1
