@@ -36,6 +36,8 @@ gem 'spring',        group: :development
 # Add Twitter Bootstrap framework
 gem 'bootstrap-sass', '~> 2.3.1.0'
 
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
