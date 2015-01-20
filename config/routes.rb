@@ -1,4 +1,8 @@
 Swiftcount::Application.routes.draw do
+  resources :companies do
+    collection { post :import }
+  end
+
   devise_for :users
   get "welcome/index"
   get "welcome/about"
@@ -6,6 +10,7 @@ Swiftcount::Application.routes.draw do
   get "welcome/features"
   get "welcome/faqs"
   get "welcome/pricing"
+  
   resources :accountings
 
   root to: 'welcome#index'
