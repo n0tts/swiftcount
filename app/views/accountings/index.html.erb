@@ -1,15 +1,15 @@
 <div class="row">
   <h1>Listing accountings</h1>
   <div class="pull-right range-query">
-    <%= form_tag accountings_path, method: :get do %>
+    <%= form_tag accountings_path, class: 'form-inline', method: :get do %>
       <%= text_field_tag 'search[date_from]', @search.date_from %>
       <%= text_field_tag 'search[date_to]', @search.date_to %>
       <%= submit_tag 'search', class: 'btn search-button' %>
     <% end %>
   </div>
-<div>
+</div>
 
-  <div class="media">
+<div class="media">
   <div class="media-body">
     <table class="table table-hover">
       <thead>
@@ -25,7 +25,7 @@
       <tbody>
         <% @accountings.each do |accounting| %>
           <tr>
-            <td><%= accounting.date.strftime("%d-%m-%y") %></td>
+            <td><%= accounting.date.strftime("%d-%m-%Y") %></td>
             <td><%= accounting.company %></td>
             <td><%= accounting.tax %></td>
             <td><%= accounting.salesperson %></td>
