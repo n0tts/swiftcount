@@ -18,6 +18,7 @@
           <th>Company</th>
           <th>Tax</th>
           <th>Salesperson</th>
+          <th>Status</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -29,6 +30,7 @@
             <td><%= accounting.company %></td>
             <td><%= accounting.tax %></td>
             <td><%= accounting.salesperson %></td>
+            <td><%= accounting.status_type %></td>
             <td><%= link_to 'Show', accounting, class:'btn btn-mini' %></td>
             <td><%= link_to 'Edit', edit_accounting_path(accounting), class:'btn btn-mini btn-success' %></td>
             <td><%= link_to 'Destroy', accounting, method: :delete, class:'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
