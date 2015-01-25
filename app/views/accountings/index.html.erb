@@ -18,6 +18,7 @@
           <th>Company</th>
           <th>Tax</th>
           <th>Salesperson</th>
+          <th>Status</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -28,7 +29,11 @@
             <td><%= accounting.date.strftime("%d-%m-%Y") %></td>
             <td><%= accounting.company %></td>
             <td><%= accounting.tax %></td>
+<<<<<<< HEAD
             <td><%= accounting.employee.name %></td>
+=======
+            <td><%= accounting.employee_id %></td>
+>>>>>>> add-db-form-call
             <td><%= accounting.status_type %></td>
             <td><%= link_to 'Show', accounting, class:'btn btn-mini' %></td>
             <td><%= link_to 'Edit', edit_accounting_path(accounting), class:'btn btn-mini btn-success' %></td>
