@@ -1,4 +1,5 @@
-<%= form_for(@employee) do |f| %>
+<div class="row">
+<%= form_for @employee, html: {class: 'form-horizontal'} do |f| %>
   <% if @employee.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
@@ -11,19 +12,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="control-group">
+    <%= f.label :name, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
+  
+  <div class="control-group">
+    <%= f.label :phone, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :phone %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :job_type %><br>
-    <%= f.text_field :job_type %>
+  
+  <div class="control-group">
+    <%= f.label :job_type, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :job_type %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit 'Submit', class: 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
+</div>

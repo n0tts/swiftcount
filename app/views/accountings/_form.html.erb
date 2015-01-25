@@ -11,27 +11,29 @@
       </ul>
     </div>
   <% end %>
-
+<div class="media">
+  <div class="media-control">
   <div class="control-group">
-    <%= f.label :date, class: 'control-label' %><br>
+    <%= f.label :date, class: 'control-label' %>
     <div class="controls">
      <%= f.date_select :date %>
     </div>
   </div>
+  
   <div class="control-group">
-    <%= f.label :company, class: 'control-label' %><br>
+    <%= f.label :company, class: 'control-label' %>
     <div class="controls">
       <%= f.text_field :company %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :tax, class: 'control-label' %><br>
+    <%= f.label :tax, class: 'control-label' %>
     <div class="controls">
       <%= f.text_field :tax %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :employee_id, class: 'control-label' %><br>
+    <%= f.label :employee_id, class: 'control-label' %>
     <div class="controls">
       <%= collection_select( :accounting, :employee_id, Employee.all, :id, :name, {}, { :multiple => false} ) %>
     </div>
@@ -48,5 +50,8 @@
       <%= f.submit 'Submit', class: 'btn btn-default' %>
     </div>
   </div>
+  </div>
+  </div>
+  
 <% end %>
 </div>
