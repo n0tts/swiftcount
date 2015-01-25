@@ -28,7 +28,8 @@
             <td><%= accounting.date.strftime("%d-%m-%Y") %></td>
             <td><%= accounting.company %></td>
             <td><%= accounting.tax %></td>
-            <td><%= accounting.salesperson %></td>
+            <td><%= accounting.employee.name %></td>
+            <td><%= accounting.status_type %></td>
             <td><%= link_to 'Show', accounting, class:'btn btn-mini' %></td>
             <td><%= link_to 'Edit', edit_accounting_path(accounting), class:'btn btn-mini btn-success' %></td>
             <td><%= link_to 'Destroy', accounting, method: :delete, class:'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
