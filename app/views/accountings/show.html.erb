@@ -17,7 +17,12 @@
 
 <p>
   <strong>Salesperson:</strong>
-  <%= @accounting.salesperson %>
+  <%= @accounting.employee_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @accounting.status_type %>
 </p>
 
 <%= link_to 'Edit', edit_accounting_path(@accounting) %> |
