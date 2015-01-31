@@ -11,6 +11,8 @@ class AccountingsController < ApplicationController
   # GET /accountings/1
   # GET /accountings/1.json
   def show
+    @accountings = Accounting.find(params[:id])
+    @purchases = @accounting.purchases
   end
 
   # GET /accountings/new

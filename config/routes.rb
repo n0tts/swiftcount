@@ -1,5 +1,4 @@
 Swiftcount::Application.routes.draw do
-  resources :purchases
 
   resources :employees
 
@@ -15,7 +14,9 @@ Swiftcount::Application.routes.draw do
   get "welcome/faqs"
   get "welcome/pricing"
   
-  resources :accountings
+  resources :accountings do
+    resources :purchases, except: [:index], controller: 'accountings/purchases'
+  end
 
   root to: 'welcome#index'
   
