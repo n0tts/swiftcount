@@ -1,29 +1,35 @@
-class PurchasesController < ApplicationController
-  before_action :set_purchase, only: [:show, :edit, :update, :destroy]
-
-  respond_to :html
-
+class Accountings::PurchasesController < ApplicationController
+respond_to :html, :xml, :json
   def index
     @purchases = Purchase.all
     respond_with(@purchases)
   end
 
   def show
-    respond_with(@purchase)
+    respond_with(@purchases)
   end
 
   def new
+    @accounting = Accounting.find(params[:accounting_id])
     @purchase = Purchase.new
-    respond_with(@purchase)
   end
 
   def edit
   end
 
   def create
+    @accounting = Accounting.find(params[:accounting_id])
     @purchase = Purchase.new(purchase_params)
-    @purchase.save
-    respond_with(@purchase)
+    @purchase.accounting = @accounting
+    respond_to do |format| 
+      if @accounting.save
+        format.html {redirect_to @accounting, notice: 'Purchase created succesfully' }
+        format.json {render action: 'show', status: :created, location: @accounting }
+      else
+        format.html {render action: 'new' }
+        format.json {render json: @accounting.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
@@ -32,8 +38,17 @@ class PurchasesController < ApplicationController
   end
 
   def destroy
-    @purchase.destroy
-    respond_with(@purchase)
+    @accounting = Accounting.find(params[:accounting_id])
+    @purchase = Purchase.find(params[:id])
+    title = @purchase.name
+    
+    if @purchase.destroy
+      flash[:notice] = "\#{title} was deleted successfully."
+      redirect_to @accounting
+    else
+      flash[:error] = "There was error deleting the purchase"
+      render :show
+    end
   end
 
   private
