@@ -43,7 +43,7 @@ respond_to :html, :xml, :json
     title = @purchase.name
     
     if @purchase.destroy
-      flash[:notice] = "\#{title} was deleted successfully."
+      flash[:notice] = "\"#{title}\" was deleted successfully."
       redirect_to @accounting
     else
       flash[:error] = "There was error deleting the purchase"
@@ -57,6 +57,6 @@ respond_to :html, :xml, :json
     end
 
     def purchase_params
-      params.require(:purchase).permit(:name, :category, :quantity, :accounting_id)
+      params.require(:purchase).permit(:name, :category, :quantity, :accounting_id, :price)
     end
 end
