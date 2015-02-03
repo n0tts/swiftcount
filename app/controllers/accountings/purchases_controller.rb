@@ -22,7 +22,7 @@ respond_to :html, :xml, :json
     @purchase = Purchase.new(purchase_params)
     @purchase.accounting = @accounting
     respond_to do |format| 
-      if @accounting.save
+      if @purchase.save
         format.html {redirect_to @accounting, notice: 'Purchase created succesfully' }
         format.json {render action: 'show', status: :created, location: @accounting }
       else
